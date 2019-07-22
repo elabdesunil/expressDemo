@@ -28,7 +28,8 @@ Part 2
 make another fake database file called tests.js, make sure you require tests.js in your main file
 
 Example:
-		Test [{id : 1, score: 99, subject : 'Physics', studentID : 2},{id:2, score:87,subject:'Physics',studentId:1}, {id:3,score, subject:"{Physics}}]
+		
+    Test [{id : 1, score: 99, subject : 'Physics', studentID : 2},{id:2, score:87,subject:'Physics',studentId:1}, {id:3,score, subject:"{Physics}}]
 Add other tests via your routes, make sure all are working
 
 

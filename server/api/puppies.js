@@ -26,41 +26,6 @@ let puppies = [{
 }]
 
 
-router.get('/',sendPuppies)
-
-function sendPuppies(request, response){
-
-const name = request.params.puppy
-  response.send(puppies)
-}
-
-router.post('/', function(req,res){
-  let newId = puppies.length +1
-  console.log(req.body)
-  let puppy = {
-    id: newId,
-    name: req.body.name
-  }
-  puppies.push(puppy)
-  res.send(puppies)
-})
-
-// Delete Puppy
-router.delete('/:id', function(req, res, next) {
-  let newPuppies = tests.filter(puppy => puppy.id !==  req.params.id);
-  res.json(newPuppies);
-});
-
-// Update Puppy
-router.put('/:id', function(req, res, next) {
-  puppies.map(puppy => {
-    if (score.id === req.params.id) {
-      puppy.name = req.body.name
-    }
-  });
-  res.json(puppies);
-});
-
 
 
 module.exports = router;

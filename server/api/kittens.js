@@ -1,6 +1,4 @@
 
-const router = require('express').Router();
-
 const cats = [{
   id:1,
   name:'Taylor',
@@ -33,4 +31,4 @@ const cats = [{
 
 
 
-module.exports = router;
+
