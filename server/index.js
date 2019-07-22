@@ -17,7 +17,7 @@ app.use('/api', require('./api'));
 
 
 
-const server = app.listen(3001,listening)
+const server = app.listen(3000,listening)
 
 
 function listening(){
@@ -25,6 +25,6 @@ function listening(){
   console.log("listening")
 }
 
-app.use(express.static('website'))
+app.use('/',express.static('./website'))
 
 

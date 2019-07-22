@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Objective: Build 2 sets of CRUD routes for 2 models, Students and Tests
 
-In the project directory, you can run:
+### Details
+First, npm install and then set up your server based on what we learned in the lecture. 
 
-### `npm start`
+run your server by using the command nodemon index.js
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+	- For now, our models/ database should just be objects. Make a file called student.js and declare an array of objects with some students.
+	-Make Sure you require students.js in your main file. 
+	-run your server and send requests to it with your browser and postman. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+	Example:
 
-### `npm test`
+    Student: [{id :1, name : 'John'},{id:2, name:Jim},{id:3,name:Jane}]
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Part 1: 
 
-### `npm run build`
+ Necessary routes:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+		- Get all students
+		- Add Student
+		- Update student name
+		- Delete Student
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Part 2
+make another fake database file called tests.js, make sure you require tests.js in your main file
 
-### `npm run eject`
+Example:
+		Test [{id : 1, score: 99, subject : 'Physics', studentID : 2},{id:2, score:87,subject:'Physics',studentId:1}, {id:3,score, subject:"{Physics}}]
+Add other tests via your routes, make sure all are working
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Neccessary routes:
+		- Get all test scores
+			- Update test score
+			- Get top scoring student, should return the student's name. 
+			- Get mean test score 
+			- Delete Score
+			- Add Score
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Extra credit:
+Make sure your Add and update score routes only update if the correct type of data is added. If a test score, it must be a number, etc. How would you do this?
+If the type of data is wrong, return a message saying it was incorrect.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### How to test routes without a frontend or specs
+- GET: use your browser
+- POST / PUT / DELETE :
+ - CLI (command line interface) with `curl`
+   - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
+   - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
+ - [Postman](https://www.getpostman.com/)
